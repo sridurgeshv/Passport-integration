@@ -82,15 +82,28 @@ const login = async () => {
 
 This will open the Passport login popup for the user to login with their Immutable X account. On successful login it will return the idToken and accessToken.
 
-## Displaying User Information
+## Displaying on the app the id token, access token obtained from authenticating with Passport after login, and the user's nickname.
 
 After login, we can display the user's info:
 
 ```jsx
-<p>ID Token: {idToken}</p>
-<p>Access Token: {accessToken}</p>
+const checkLoginStatus = setInterval(async () => {
+      if (newWindow.closed) {
+        clearInterval(checkLoginStatus);
+        try {
+          const { idToken, accessToken, userInfo } = await passport.checkLogin();
 
-<p>Nickname: {userInfo.nickname}</p> 
+          // Display user information
+          document.getElementById('idToken').innerText = `ID Token: ${idToken}`;
+          document.getElementById('accessToken').innerText = `Access Token: ${accessToken}`;
+          document.getElementById('nickname').innerText = `Nickname: ${userInfo.nickname}`;
+          
+        } catch (error) {
+          // Handle login error
+          console.error('Login error:', error);
+        }
+      }
+    }, 1000);
 ```
 
 The user's nickname, wallet address and other info is available in `userInfo` object.
@@ -128,7 +141,7 @@ This will initiate a sample transaction to send a string "Hello World" and retur
 
 ## Conclusion
 
-You have successfully integrated Immutable Passport into your application, allowing users to authenticate, initiate transactions, and securely interact with the Immutable blockchain designed for gaming. For more information and detailed options, refer to the [Immutable Passport documentation](https://docs.immutable.com/docs/zkevm/get-started/)
+You have successfully integrated Immutable Passport into your application, allowing users to authenticate, initiate transactions, and securely interact with the Immutable blockchain designed for gaming. For more information and detailed options, refer to the [Immutable Passport documentation](https://docs.immutable.com/docs/zkevm/products/passport/)
 
 ## Example Application
 For a working sample application demonstrating Immutable Passport integration,The application is accessible at the following link \
