@@ -1,7 +1,11 @@
 # Integrating Immutable Passport into your Application
 
-This comprehensive guide will walk you through step-by-step on how to integrate Immutable Passport into your application for user authentication and blockchain transactions.
+Are you looking to seamlessly incorporate Immutable Passport into your straightforward React application? You're in the right place. This comprehensive guide offers you a user-friendly, step-by-step approach to integrating Immutable Passport into your project. We'll walk you through the entire process, from establishing the connection to retrieving user data and initializing transactions. Whether you're a seasoned developer or just getting started, this guide will ensure you're on the right track. Let's dive in!
 
+## Prerequisites
+- Immutable Passport credentials (client ID) from Immutable Developer Hub.
+- Latest version of node.
+- Basic React App.
 ## Introduction
 
 Immutable Passport allows you to easily implement login, account creation and blockchain transactions in your application. Users can use their existing Immutable X account to login seamlessly. 
@@ -31,10 +35,10 @@ This will generate a barebones React app in a folder called `my-passport-app`. N
 
 ## Step 2 - Registering your Application 
 
-Head over to the [Immutable Developer Hub](https://hub.immutable.com/) and signup if you haven't already. Click on "Register New App" and fill in the details:
-
+Head over to the [Immutable Developer Hub](https://hub.immutable.com/) and signup if you haven't already.
+Next, generate the client and make sure to record your ClientID, Callback URLs, and Logout URLs.
+Below is the example details
 - **Name** - My Passport App 
-- **Description** - A test app to demo Immutable Passport
 - **Redirect URIs** - http://localhost:3000
 
 Copy the **Client ID** that is generated, we will need it later.
