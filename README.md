@@ -5,7 +5,6 @@ Are you looking to seamlessly incorporate Immutable Passport into your straightf
 ## Prerequisites
 - Immutable Passport credentials (client ID) from Immutable Developer Hub.
 - Latest version of node.
-- Basic React App.
 ## Introduction
 
 Immutable Passport allows you to easily implement login, account creation and blockchain transactions in your application. Users can use their existing Immutable X account to login seamlessly. 
